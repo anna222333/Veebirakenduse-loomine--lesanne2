@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <style>
+        @font-face {
+            font-family: 'QuicksandBook';
+            src: url('fonts/Quicksand_Book-webfont.eot');
+        }
+
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    }
+    a {
+        color: #b5c1ad;
+        text-decoration: none;
+        }
+    a:hover {
+            color: #1d4f2b;
+        }   
+        .content {
+    flex: 1; 
+    }
+ 
+
+
+        /*Header*/
+    .header {
+      background-color: #1b3025;
+      border: 8px double #032312;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      position: relative;
+      height: 100px;
+      }
+    .header .logo {
+        font-size: 25px;
+        font-weight: bold;
+        }
+     .header .description {
+        font-size: 14px;
+        margin-top: 5px;
+        }
+
+    /*Navigation*/  
+    .nav-panel {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative;
+    width: 100%;
+    background-color:#032312;
+    padding: 10px;
+    box-shadow: 0 2px 5px #1b3025;
+    }
+    .nav-panel .menu-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    white-space: nowrap; 
+    height: 40px; 
+    width: 150px; 
+    background-color: #1b3025;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px 10px; 
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+        }
+    .nav-panel .menu-btn:hover {
+    background-color: #032312;
+    box-shadow: 0 2px 5px#1b3025;
+        }  
+        
+
+    /*Content*/
+    .content {
+    position: relative; 
+    flex: 1;
+    clear: both;
+    padding: 30px 5px;
+    background: none; 
+    }
+
+    .content::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.png');
+    background-size: 330px;
+    background-position: top;
+    background-repeat: repeat; 
+    opacity:  0.15;
+    z-index: -1;
+    }
+
+
+ /*Product cards*/
+.product-container {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center;
+}
+.product-card {
+   background-color: #1b302595; 
+    border: 1px solid #ddd; 
+    border-radius: 12px;
+    box-shadow: 0 2px 5px #032312;
+    box-sizing: content-box;
+    text-align:center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+.product-card:hover {
+    background-color: #1b3025cb;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px #3f6953;
+}
+.product-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+    color: #ffffff;
+}
+.card-title:hover  {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px; 
+    color: #ffffff;
+}
+.card-price {
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #ffffff; 
+    margin-bottom: 10px; 
+}
+.buy-btn {
+    background-color:  #04351b !important; 
+    color: white !important; 
+    border: none !important; 
+    outline: none !important; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+.buy-btn:hover {
+    background-color:#005126 !important; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 10px #1b3025; 
+}
+.buy-btn:active {
+    background-color: #00612d !important; 
+    transform: scale(0.95); 
+    box-shadow: none;
+}
+
+/*Footer*/
+.footer {
+    clear: both;
+    background-color:#032312 ;
+    padding: 5px 10px;
+    text-align: center;
+        }
+.footer p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75%;
+     text-align: center;
+        }
+.footer a {
+    color:   #ffffff;
+        }
+.footer a:hover {
+    color: #375747;
+        }
+
+    </style>
+</head>
+<body>
+      
+      <div class="header">
+        <div class="logo">MarjaMets</div>
+        <div class="description">Viljapõõsaste istikute pood.</div> 
+    </div>
+     
+    <div class="nav-panel">
+        <button class="menu-btn"  onclick="window.location.href='index.html'">Meie kohta</button>
+        <button class="menu-btn"  onclick="window.location.href='blog.html'">Blog</button>
+        <button class="menu-btn"  onclick="window.location.href='contacts.html'">Kontaktid</button>
+        <button class="menu-btn"  onclick="window.location.href='products.html'">Kaubad</button>
+        <button class="menu-btn" onclick="window.location.href='login.html'">Login</button>
+    </div>
+   
+    <div class="content">
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_blueberry-bush-with-ripe-berries-on-a-sunny-day-in-the_27006864.jpg" alt="Product 1" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Mustikas</h5></a>
+                            <p class="card-price">14.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_raspberries-growing-on-tree-background_48127706.jpg" alt="Product 2" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Vaarikas</h5></a>
+                            <p class="card-price">19.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_ai-generated-black-currant-bush-with-ripe-berries-on-a_36373202.jpg" alt="Product 3" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Mustsõstar</h5></a>
+                            <p class="card-price">9.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_ai-generated-red-currant-berries-with-water-drops-on-green_36374452.jpg" alt="Product 4" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Punane sõstar</h5></a>
+                            <p class="card-price">11.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_bunch-of-red-and-green-fruit-hanging-from-tree-background_48127756.jpg" alt="Product 4" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Karusmari</h5></a>
+                            <p class="card-price">10.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="product-card">
+                        <img src="images/vecteezy_cherries-on-tree-background_48127730.jpg" alt="Product 4" class="card-img-top" />
+                        <div class="card-body">
+                            <a href=""><h5 class="card-title">Kirss</h5></a>
+                            <p class="card-price">17.99€</p>
+                            <button class="btn btn-primary buy-btn">Osta</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <div class="footer clearfix">
+        <div class="container_12">
+            <p class="grid_12"><a href="">Legal Information</a> | <a href="">Privacy Policy</a> | <a href="">Copyright &copy; MarjaMets 2025</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarjaMets</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <style>
+        @font-face {
+            font-family: 'QuicksandBook';
+            src: url('fonts/Quicksand_Book-webfont.eot');
+        }
+
+       body {
+       display: flex;
+       flex-direction: column;
+       min-height: 100vh;
+       margin: 0;
+        }
+         a {
+        color: #b5c1ad;
+        text-decoration: none;
+        }
+        a:hover {
+        color: #1d4f2b;
+        }   
+        .content {
+         flex: 1; 
+        }
+ 
+
+
+        /*Header*/
+    .header {
+      background-color: #1b3025;
+      border: 8px double #032312;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 20px;
+      position: relative;
+      height: 100px;
+      }
+
+    .header .logo {
+        font-size: 25px;
+        font-weight: bold;    
+        }
+     
+
+    .header .description {
+        font-size: 14px;
+         margin-top: 5px;
+        }
+
+      
+    /*Navigation*/  
+        .nav-panel {
+           
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative;
+    width: 100%;
+    background-color:#032312;
+    padding: 10px;
+    box-shadow: 0 2px 5px #1b3025;
+    }
+        .nav-panel .menu-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    white-space: nowrap; 
+    height: 40px; 
+    width: 150px; 
+    background-color: #1b3025;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px 10px; 
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .nav-panel .menu-btn:hover {
+        background-color: #032312;
+        box-shadow: 0 2px 5px#1b3025;
+    }  
+        
+
+    /*Content*/
+    .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 30px 5px;
+    background: none;
+    position: relative;
+    z-index: 0; 
+     }
+
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.png');
+    background-size: 330px;
+    background-position: top; 
+    background-repeat: repeat; 
+    opacity:  0.15; 
+    z-index: -1; 
+}
+   
+/*Carousel*/
+
+#carouselExampleSlide {
+    
+    margin-top: 30px;
+    margin-bottom: 60px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #1b3025;
+    max-width: 600px; 
+    max-height: 1200px ;
+      
+}
+
+.carousel-caption {
+    background: #1b3025b1;
+    border: 2px solid #1b3025bc;
+    border-radius: 16px;
+    padding: 40px 50px;
+    max-width: 700px; 
+    margin: auto;
+    transition: all 0.3s ease;
+    position: absolute;
+    bottom: 35%;
+}
+
+.slide-link:hover img {
+    filter: brightness(50%); 
+    transition: 0.3s ease;
+}
+
+.slide-link:hover .carousel-caption {
+    background: #1b3025d7; 
+}
+
+
+/*Footer*/
+.footer {
+            clear: both;
+            background-color:#032312 ;
+            padding: 5px 10px;
+            text-align: center;
+            margin: 0; 
+        }
+        .footer p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 75%;
+            text-align: center;
+        }
+        .footer a {
+            color:   #ffffff;
+        }
+        .footer a:hover {
+            color: #375747;
+        }
+    </style>
+</head>
+<body>
+      
+      <div class="header">
+        <div class="logo">MarjaMets</div>
+        <div class="description">Viljapõõsaste istikute pood.</div> 
+    </div>
+     
+    <div class="nav-panel">
+        <button class="menu-btn"  onclick="window.location.href='index.html'">Meie kohta</button>
+        <button class="menu-btn"  onclick="window.location.href='blog.html'">Blog</button>
+        <button class="menu-btn"  onclick="window.location.href='contacts.html'">Kontaktid</button>
+        <button class="menu-btn"  onclick="window.location.href='products.html'">Kaubad</button>
+        <button class="menu-btn" onclick="window.location.href='login.html'">Login</button>
+    </div>
+   
+    <div class="content">
+        <div id="carouselExampleSlide" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="" class="slide-link">
+                        <img src="images/slide1.jpg" 
+                        alt="Slide 1"
+                        class="d-block w-100"
+                        />
+                        <div class="carousel-caption">
+                            <h5>MarjaMets</h5>
+                            <p>Meie kirg on marjad. Pakume kvaliteetseid marjapõõsaste istikuid, mis rõõmustavad teid aastateks.</p>
+                        </div>
+                    </a>
+                </div>
+    
+
+                <div class="carousel-item">
+                    <a href="" class="slide-link">
+                        <img src="images/slide2.jpg" 
+                        alt="Slide 2"
+                        class="d-block w-100"
+                        />
+                        <div class="carousel-caption">
+                            <p>Mustikad, vaarikad, sõstrad ja palju muud — meie valikus leidub igaühele midagi!</p>
+                        </div>
+                    </a>
+                </div>
+    
+               
+                <div class="carousel-item">
+                    <a href="" class="slide-link">
+                        <img src="images/slide3.jpg" 
+                        alt="Slide 3"
+                        class="d-block w-100"
+                        />
+                        <div class="carousel-caption">
+                            <p>Oma aiast korjatud marjad on värskemad, maitsvamad ja täis tervist.</p>
+                        </div>
+                    </a>
+                </div>
+    
+               
+                <div class="carousel-item">
+                    <a href="" class="slide-link">
+                        <img src="images/slide4.jpg" 
+                        alt="Slide 4"
+                        class="d-block w-100"
+                        />
+                        <div class="carousel-caption">
+                            <p>Teeme istikute ostmise lihtsaks – vali veebist, meie toome koju kätte!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+               
+        
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleSlide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+    
+           
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleSlide" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleSlide" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+        </div>
+    </div>
+   
+  
+
+    <div class="footer clearfix">
+        <div class="container_12">
+            <p class="grid_12"><a href="">Legal Information</a> | <a href="">Privacy Policy</a> | <a href="">Copyright &copy; MarjaMets 2025</a></p>
+        </div>
+    </div>
+</body>
+</html>
